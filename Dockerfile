@@ -6,7 +6,7 @@ RUN \
   apk add --no-cache \
     apache2-utils \
     git \
-    libressl3.3-libssl \
+    #libressl3.6-libssl \
     logrotate \
     nano \
     nginx \
@@ -22,6 +22,7 @@ RUN \
     php7-xml \
     php7-xmlwriter \
     php7-zlib && \
+	apk search -qe 'libressl*-libssl' | xargs apk add && \
   echo "**** configure nginx ****" && \
   echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
     /etc/nginx/fastcgi_params && \
