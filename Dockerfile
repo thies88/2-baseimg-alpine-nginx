@@ -1,4 +1,4 @@
-FROM 1-base-alpine:3.17
+FROM 1-base-alpine:3.15
 
 # install packages
 RUN \
